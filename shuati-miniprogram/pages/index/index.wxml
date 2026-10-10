@@ -1,0 +1,69 @@
+<view class="page">
+  <!-- 顶部统计卡 -->
+  <view class="hero">
+    <view class="hero-title">{{title}}</view>
+    <view class="hero-sub">{{source}} · 共 {{total}} 题</view>
+    <view class="hero-stats">
+      <view class="stat">
+        <view class="stat-num">{{stats.answered}}<text class="stat-total">/{{total}}</text></view>
+        <view class="stat-label">已练习</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat">
+        <view class="stat-num">{{stats.rate}}<text class="stat-unit">%</text></view>
+        <view class="stat-label">正确率</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat">
+        <view class="stat-num">{{stats.wrong}}</view>
+        <view class="stat-label">错题</view>
+      </view>
+    </view>
+    <view class="hero-bar">
+      <view class="hero-bar-inner" style="width: {{total ? stats.answered * 100 / total : 0}}%"></view>
+    </view>
+  </view>
+
+  <!-- 模式入口 -->
+  <view class="modes">
+    <view class="mode-card" bindtap="goRandom">
+      <view class="mode-icon mode-icon-blue">🎲</view>
+      <view class="mode-name">随机刷题</view>
+      <view class="mode-desc">全题库打乱顺序</view>
+    </view>
+    <view class="mode-card" bindtap="goWrong">
+      <view class="mode-icon mode-icon-red">📕</view>
+      <view class="mode-name">错题本</view>
+      <view class="mode-desc">{{stats.wrong}} 道待攻克</view>
+    </view>
+  </view>
+
+  <!-- 章节列表 -->
+  <view class="section-head">
+    <view class="section-title">顺序练习</view>
+    <view class="section-action" bindtap="reset">清空记录</view>
+  </view>
+
+  <view class="chapter-list">
+    <view class="chapter card" wx:for="{{chapters}}" wx:key="id" data-id="{{item.id}}" bindtap="goChapter">
+      <view class="chapter-main">
+        <view class="chapter-name">{{item.name}}</view>
+        <view class="chapter-meta">
+          <text>{{item.count}} 题</text>
+          <text class="chapter-dot">·</text>
+          <text>已做 {{item.answered}}</text>
+          <text class="chapter-dot" wx:if="{{item.answered}}">·</text>
+          <text wx:if="{{item.answered}}" class="{{item.correct === item.answered ? 'meta-green' : 'meta-orange'}}">对 {{item.correct}}</text>
+        </view>
+      </view>
+      <view class="chapter-right">
+        <view class="chapter-percent">{{item.percent}}%</view>
+        <view class="chapter-bar">
+          <view class="chapter-bar-inner" style="width: {{item.percent}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">题库由 PDF 自动提取生成 · OvisOCR2 环境就绪可扩充扫描件题库</view>
+</view>

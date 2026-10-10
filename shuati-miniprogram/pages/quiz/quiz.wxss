@@ -1,0 +1,304 @@
+.page {
+  padding: 24rpx 24rpx 0;
+}
+
+/* 进度 */
+.progress-wrap {
+  margin-bottom: 20rpx;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.progress-chapter {
+  font-size: 24rpx;
+  color: #8A91A3;
+  max-width: 480rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-num {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #3D6EF7;
+}
+
+.progress-bar {
+  height: 10rpx;
+  border-radius: 5rpx;
+  background: #E4E9F4;
+  overflow: hidden;
+}
+
+.progress-inner {
+  height: 100%;
+  border-radius: 5rpx;
+  background: linear-gradient(90deg, #6E96FA, #3D6EF7);
+  transition: width 0.3s ease;
+}
+
+/* 题目卡片 */
+.q-card {
+  padding: 30rpx 28rpx;
+}
+
+.q-head {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.q-badge {
+  background: #EAF0FE;
+  color: #3D6EF7;
+  font-size: 22rpx;
+  font-weight: 600;
+  padding: 6rpx 18rpx;
+  border-radius: 999rpx;
+}
+
+.q-num {
+  font-size: 24rpx;
+  color: #8A91A3;
+}
+
+.q-state {
+  margin-left: auto;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.state-right {
+  color: #22B573;
+}
+
+.state-wrong {
+  color: #F0453A;
+}
+
+.state-lucky {
+  color: #F59E0B;
+}
+
+.q-stem {
+  margin-top: 22rpx;
+  font-size: 31rpx;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* 选项 */
+.options {
+  margin-top: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 22rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #E4E9F4;
+  background: #FAFBFE;
+  transition: all 0.15s ease;
+}
+
+.opt:active {
+  transform: scale(0.99);
+}
+
+.opt-letter {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: #EDF0F7;
+  color: #5A6172;
+  font-size: 27rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.opt-text {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 29rpx;
+  line-height: 1.55;
+}
+
+.opt-mark {
+  margin-left: 12rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #22B573;
+  flex-shrink: 0;
+}
+
+.opt-mark-wrong {
+  color: #F0453A;
+}
+
+/* 判定后的选项状态 */
+.opt-correct {
+  border-color: #22B573;
+  background: #EFFAF4;
+}
+
+.letter-correct {
+  background: #22B573;
+  color: #fff;
+}
+
+.opt-wrong {
+  border-color: #F0453A;
+  background: #FDEEEC;
+}
+
+.letter-wrong {
+  background: #F0453A;
+  color: #fff;
+}
+
+.opt-dim {
+  opacity: 0.55;
+}
+
+.opt-active {
+  border-color: #3D6EF7;
+  background: #F0F4FF;
+}
+
+/* 解析 */
+.analysis {
+  margin-top: 20rpx;
+  padding: 26rpx 28rpx;
+  border-left: 8rpx solid #3D6EF7;
+}
+
+.analysis-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analysis-title {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.analysis-answer {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #22B573;
+}
+
+.analysis-text {
+  margin-top: 14rpx;
+  font-size: 27rpx;
+  line-height: 1.75;
+  color: #4A5060;
+}
+
+/* 蒙对标记 */
+.lucky-toggle {
+  margin-top: 22rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 20rpx 22rpx;
+  border-radius: 14rpx;
+  border: 2rpx dashed #E3C98F;
+  background: #FFFDF6;
+  transition: all 0.15s ease;
+}
+
+.lucky-toggle:active {
+  transform: scale(0.99);
+}
+
+.lucky-on {
+  border-style: solid;
+  border-color: #F59E0B;
+  background: #FFF6E3;
+}
+
+.lucky-emoji {
+  font-size: 36rpx;
+  flex-shrink: 0;
+}
+
+.lucky-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.lucky-title {
+  font-size: 27rpx;
+  font-weight: 600;
+  color: #8A6D1F;
+}
+
+.lucky-desc {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #B39A54;
+}
+
+.lucky-switch {
+  width: 76rpx;
+  height: 44rpx;
+  border-radius: 999rpx;
+  background: #E4E9F4;
+  padding: 4rpx;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lucky-knob {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.lucky-on .lucky-switch {
+  background: #F59E0B;
+}
+
+.lucky-on .lucky-knob {
+  transform: translateX(32rpx);
+}
+
+/* 底部按钮 */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx 24rpx calc(20rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 -4rpx 20rpx rgba(43, 60, 110, 0.06);
+}
+
+.bar-btn {
+  flex: 1;
+}
+
+.bottom-holder {
+  height: 160rpx;
+}

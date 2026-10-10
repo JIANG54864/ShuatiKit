@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/quiz/quiz"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3D6EF7",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "北京市情刷题",
+    "backgroundColor": "#F4F6FB",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

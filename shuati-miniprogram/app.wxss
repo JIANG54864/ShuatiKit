@@ -1,0 +1,48 @@
+/* 全局样式 */
+page {
+  background: #F4F6FB;
+  font-size: 28rpx;
+  color: #2B2F38;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(43, 60, 110, 0.06);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4A7CF9, #3D6EF7);
+  color: #fff;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: center;
+  padding: 22rpx 0;
+  box-shadow: 0 6rpx 16rpx rgba(61, 110, 247, 0.3);
+}
+
+.btn-primary:active {
+  opacity: 0.85;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: #3D6EF7;
+  border: 2rpx solid #C6D5FB;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.btn-ghost:active {
+  background: #F0F4FF;
+}
+
+.btn-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

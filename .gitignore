@@ -1,0 +1,35 @@
+# ========== 版权内容与衍生数据（不随仓库分发）==========
+# 原始 PDF 资料及其文字层提取产物（第三方版权内容）
+*.pdf
+*_提取文本.txt
+# 题库数据：由版权资料解析而来
+# 克隆仓库后运行 `python generate_demo_data.py` 生成演示题库
+questions.json
+题库预览.md
+parse_report.txt
+shuati-miniprogram/data/questions.js
+# OCR 输出产物
+*_OCR结果.md
+
+# ========== 模型权重 ==========
+# OvisOCR2 约 1.6GB，超过 GitHub 单文件 100MB 限制，且权重属于第三方
+# 按 README 指引从 ModelScope 下载：ATH-MaaS/OvisOCR2
+models/
+
+# ========== 微信小程序个人配置（含真实 AppID）==========
+shuati-miniprogram/project.private.config.json
+
+# ========== 本地工具配置 ==========
+.claude/
+.vscode/
+.idea/
+
+# ========== Python / Node / 系统垃圾 ==========
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini

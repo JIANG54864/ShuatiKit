@@ -1,0 +1,67 @@
+<view class="page" wx:if="{{q}}">
+  <!-- 进度条 -->
+  <view class="progress-wrap">
+    <view class="progress-info">
+      <text class="progress-chapter">{{chapterName}}</text>
+      <text class="progress-num">{{idx + 1}} / {{total}}</text>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-inner" style="width: {{percent}}%"></view>
+    </view>
+  </view>
+
+  <!-- 题目卡片 -->
+  <view class="q-card card">
+    <view class="q-head">
+      <view class="q-badge">单选</view>
+      <view class="q-num">第 {{q.num}} 题</view>
+      <view class="q-state" wx:if="{{judged}}">
+        <text wx:if="{{isCorrect && lucky}}" class="state-lucky">🎲 蒙对</text>
+        <text wx:elif="{{isCorrect}}" class="state-right">✓ 答对了</text>
+        <text wx:else class="state-wrong">✗ 答错了</text>
+      </view>
+    </view>
+    <view class="q-stem">{{q.stem}}</view>
+
+    <view class="options">
+      <view
+        wx:for="{{q.options}}"
+        wx:key="index"
+        class="opt {{judged && item[0] === q.answer ? 'opt-correct' : ''}} {{judged && item[0] === selected && item[0] !== q.answer ? 'opt-wrong' : ''}} {{judged && item[0] !== selected && item[0] !== q.answer ? 'opt-dim' : ''}} {{!judged && item[0] === selected ? 'opt-active' : ''}}"
+        data-letter="{{item[0]}}"
+        bindtap="onOption"
+      >
+        <view class="opt-letter {{judged && item[0] === q.answer ? 'letter-correct' : ''}} {{judged && item[0] === selected && item[0] !== q.answer ? 'letter-wrong' : ''}}">{{item[0]}}</view>
+        <view class="opt-text">{{item[1]}}</view>
+        <view class="opt-mark" wx:if="{{judged && item[0] === q.answer}}">✓</view>
+        <view class="opt-mark opt-mark-wrong" wx:elif="{{judged && item[0] === selected}}">✗</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 解析卡片 -->
+  <view class="analysis card" wx:if="{{judged}}">
+    <view class="analysis-head">
+      <text class="analysis-title">📖 解析</text>
+      <text class="analysis-answer">正确答案：{{q.answer}}</text>
+    </view>
+    <view class="analysis-text">{{q.analysis || '暂无解析'}}</view>
+
+    <!-- 蒙对标记：答对但没把握时标记，题目保留在错题本 -->
+    <view class="lucky-toggle {{lucky ? 'lucky-on' : ''}}" wx:if="{{isCorrect}}" bindtap="onToggleLucky">
+      <text class="lucky-emoji">🎲</text>
+      <view class="lucky-info">
+        <view class="lucky-title">{{lucky ? '已标记为蒙对' : '这题是蒙对的？'}}</view>
+        <view class="lucky-desc">{{lucky ? '保留在错题本，点击取消标记' : '标记后留在错题本继续攻克'}}</view>
+      </view>
+      <view class="lucky-switch"><view class="lucky-knob"></view></view>
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="bottom-bar">
+    <view class="btn-ghost bar-btn {{idx === 0 ? 'btn-disabled' : ''}}" bindtap="prev">上一题</view>
+    <view class="btn-primary bar-btn" bindtap="next">{{isLast ? '完成练习' : '下一题'}}</view>
+  </view>
+  <view class="bottom-holder"></view>
+</view>
